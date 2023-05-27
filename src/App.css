@@ -30,7 +30,24 @@
   outline: none;
   font-size: 0.85em;
   padding: 8px 18px 6px 18px;
-  margin-top: 30px;
   opacity: 1;
   cursor: pointer;
+}
+
+.wrap-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tweet-quote {
+  color: #fff;
+  padding: 0px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  height: 30px;
+  width: 40px;
+  text-decoration: none;
+  border-radius: 3px;
 }

@@ -46,7 +46,7 @@ function App() {
           <div id="text">{quote.quote}</div>
           <div id="author">- {quote.author}</div>
 
-          <div>
+          <div className="wrap-button">
             <a
               href={
                 "https://twitter.com/intent/tweet?hashtags=quotes&text=" +
@@ -58,8 +58,9 @@ function App() {
               rel="noreferrer"
               target="_blank"
               id="tweet-quote"
+              style={{ backgroundColor: `${colors[colorIndex]}` }}
             >
-              Tag
+              .
             </a>
             <button
               id="new-quote"
