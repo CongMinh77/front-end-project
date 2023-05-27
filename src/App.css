@@ -38,6 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
 }
 
 #tweet-quote {
@@ -50,4 +51,15 @@
   width: 40px;
   text-decoration: none;
   border-radius: 3px;
+}
+
+#text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+#author {
+  margin-top: 5px;
+  font-size: 1em;
+  text-align: right;
 }
