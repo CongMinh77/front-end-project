@@ -1,0 +1,1 @@
+import { useDocumentTitle } from "./useDocumentTitle";
