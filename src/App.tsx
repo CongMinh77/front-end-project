@@ -1,78 +1,30 @@
-import React, { useState } from "react";
 import "./App.css";
-import listQuote from "./quote.json";
-
-const colors = [
-  "#16a085",
-  "#27ae60",
-  "#2c3e50",
-  "#f39c12",
-  "#e74c3c",
-  "#9b59b6",
-  "#FB6964",
-  "#342224",
-  "#472E32",
-  "#BDBB99",
-  "#77B1A9",
-  "#73A857",
-];
-const randomQuoteIndex = Math.ceil(Math.random() * listQuote.quotes.length) - 1;
-
-const getRandomQuote = () => {
-  const randomQuoteIndex =
-    Math.ceil(Math.random() * listQuote.quotes.length) - 1;
-  return listQuote.quotes[randomQuoteIndex];
-};
+import "./randomQuoteMachine.css";
+import RandomQuoteMachine from "./random-quote-machine";
+import Markdown from "markdown-to-jsx";
+import { useState } from "react";
 
 function App() {
-  const [quote, setQuote] = useState<{ quote: string; author: string }>(
-    listQuote.quotes[randomQuoteIndex]
-  );
-
-  const randomColorIndex = Math.ceil(Math.random() * colors.length) - 1;
-
-  const [colorIndex, setColorIndex] = useState(0);
-
+  const defaultPreview = "";
+  const [preview, setPreview] = useState<string>(defaultPreview);
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: `${colors[colorIndex]}`,
-        color: `${colors[colorIndex]}`,
-      }}
-    >
-      <div id="quote-box">
-        <div id="wrap-quote">
-          <div id="text">{quote.quote}</div>
-          <div id="author">- {quote.author}</div>
+    <div className="App">
+      <div>
+        <div>
+          <textarea
+            name="editor"
+            id="editor"
+            rows={10}
+            style={{ width: "100%", height: "100%" }}
+            value={preview}
+            onChange={(e) => {
+              setPreview(e.target.value);
+            }}
+          ></textarea>
+        </div>
 
-          <div className="wrap-button">
-            <a
-              href={
-                "https://twitter.com/intent/tweet?hashtags=quotes&text=" +
-                `"` +
-                quote.quote +
-                `" - ` +
-                quote.author
-              }
-              rel="noreferrer"
-              target="_blank"
-              id="tweet-quote"
-              style={{ backgroundColor: `${colors[colorIndex]}` }}
-            >
-              .
-            </a>
-            <button
-              id="new-quote"
-              style={{ backgroundColor: `${colors[colorIndex]}` }}
-              onClick={() => {
-                setQuote(getRandomQuote);
-                setColorIndex(randomColorIndex);
-              }}
-            >
-              New quote
-            </button>
-          </div>
+        <div>
+          <Markdown id="preview">{preview}</Markdown>
         </div>
       </div>
     </div>
