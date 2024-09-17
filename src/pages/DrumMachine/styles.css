@@ -1,0 +1,14 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  outline: 5px solid orange;
+  position: relative;
+  width: 660px;
+  text-align: center;
+  background-color: #b3b3b3;
+}

@@ -5,13 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import RandomQuoteMachine from "./pages/RandomQuoteMachine";
 import MarkdownPreviewer from "./pages/MarkdownPreviewer";
+import DrumMachine from "./pages/DrumMachine";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <RandomQuoteMachine /> */}
-    <MarkdownPreviewer />
+    {/* <MarkdownPreviewer /> */}
+    <DrumMachine />
   </React.StrictMode>
 );
 
