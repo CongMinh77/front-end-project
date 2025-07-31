@@ -24,7 +24,7 @@ export default function DrumMachine({}: Props) {
         {keyPlays.map((keyPlay, key) => {
           return (
             <button key={key} className="drum-pad">
-              {keyPlay.label}
+              <audio>{keyPlay.label}</audio>
             </button>
           );
         })}
